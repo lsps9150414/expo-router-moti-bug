@@ -4,7 +4,9 @@
   "version": "1.0.0",
   "scripts": {
     "start": "expo start --ios",
-    "start:minify": "expo start --ios --no-dev --minify"
+    "start:minify": "expo start --ios --minify",
+    "start:no-dev": "expo start --ios --no-dev",
+    "start:no-dev:minify": "expo start --ios --no-dev --minify"
   },
   "jest": {
     "preset": "jest-expo"
