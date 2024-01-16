@@ -4,4 +4,4 @@
   - ![Simulator Screenshot - iPhone 15 Pro - 2024-01-16 at 16 56 39](https://github.com/lsps9150414/expo-router-moti-bug/assets/5022617/5a367464-3977-47c1-9925-d09faf897c43)
 
 ## Steps to reproduce
-- `npm run start:minified` with Expo Go
+- `npm run start:minify` with Expo Go
