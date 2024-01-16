@@ -3,8 +3,8 @@
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
-    "start": "expo start",
-    "start:minify": "npm run start -- --no-dev --minify"
+    "start": "expo start --ios",
+    "start:minify": "expo start --ios --no-dev --minify"
   },
   "jest": {
     "preset": "jest-expo"
