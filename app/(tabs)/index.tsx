@@ -1,14 +1,26 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, TouchableHighlight } from "react-native";
 
-import EditScreenInfo from '../../components/EditScreenInfo';
-import { Text, View } from '../../components/Themed';
+import { MotiView } from "moti";
+import React, { useState } from "react";
+import { Text, View } from "../../components/Themed";
 
 export default function TabOneScreen() {
+  const [toggle, setToggle] = useState(true);
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
+      <MotiView
+        style={styles.box}
+        from={{ opacity: 0, left: 40 }}
+        animate={{ opacity: toggle ? 1 : 0, left: 0 }}
+      />
+
+      <TouchableHighlight
+        style={styles.button}
+        onPress={() => setToggle(state => !state)}
+      >
+        <Text style={styles.buttonText}>PRESS TO TOGGLE ANIMATION</Text>
+      </TouchableHighlight>
     </View>
   );
 }
@@ -16,16 +28,23 @@ export default function TabOneScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center"
   },
-  title: {
+  box: {
+    backgroundColor: "blue",
+    height: 100,
+    width: 100,
+    marginBottom: 100
+  },
+  button: {
+    backgroundColor: "grey",
+    padding: 20,
+    borderWidth: 1,
+    borderRadius: 10
+  },
+  buttonText: {
     fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
+    color: "white"
+  }
 });
